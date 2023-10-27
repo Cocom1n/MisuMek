@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainPanel : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class MainPanel : MonoBehaviour
     public Slider volumeMaster;
     public Toggle mute;
     public AudioMixer mixer;
+    //public AudioSource fxSource;
+    //public AudioClip clickSound;
+    //public float lastVolume;
+
     [Header("Panels")]
     public GameObject mainPanel;
     public GameObject optionsPanel;
@@ -20,8 +25,19 @@ public class MainPanel : MonoBehaviour
     {
         volumeFX.onValueChanged.AddListener(ChangeVolumeFX);
         volumeMaster.onValueChanged.AddListener(ChangeVolumeMaster);
-
     }
+
+    public void PlayLevel(string levelName)
+    {
+        SceneManager.LoadScene (levelName);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    //public void SetMute()...
 
     public void OpenPanel (GameObject panel)
     {
