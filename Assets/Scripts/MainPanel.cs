@@ -12,9 +12,9 @@ public class MainPanel : MonoBehaviour
     public Slider volumeMaster;
     public Toggle mute;
     public AudioMixer mixer;
-    //public AudioSource fxSource;
-    //public AudioClip clickSound;
-    //public float lastVolume;
+    public AudioSource fxSource;
+    public AudioClip clickSound;
+    public float lastVolume;
 
     [Header("Panels")]
     public GameObject mainPanel;
@@ -37,7 +37,16 @@ public class MainPanel : MonoBehaviour
         Application.Quit();
     }
 
-    //public void SetMute()...
+    public void SetMute()
+    {
+        if (mute.isOn)
+        {
+            mixer.GetFloat("VolMaster", out lastVolume);
+            mixer.SetFloat("VolMaster", -80);
+        }
+        else
+            mixer.SetFloat("VolMaster", lastVolume);
+    }
 
     public void OpenPanel (GameObject panel)
     {
@@ -55,5 +64,9 @@ public class MainPanel : MonoBehaviour
     public void ChangeVolumeFX(float v)
     {
         mixer.SetFloat("VolFX", v);
+    }
+    public void PlaySoundButton()
+    {
+        fxSource.PlayOneShot(clickSound);
     }
 }
