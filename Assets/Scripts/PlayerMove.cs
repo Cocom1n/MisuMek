@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float runSpeed=2;
-    public float jumpSpeed=3;
-    Rigidbody2D rb2D;
+    public float runSpeed=2;    //velocidad de movimiento del personaje
+    public float jumpSpeed=3;   //Velocidad de salto
+    Rigidbody2D rb2D;   //referencia al Rb2D del personaje
 
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -21,14 +21,14 @@ public class PlayerMove : MonoBehaviour
     {
         if(Input.GetKey("d") || Input.GetKey("right"))
         {
-            rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(runSpeed * Time.deltaTime , rb2D.velocity.y);
             spriteRenderer.flipX = true;
             animator.SetBool("walk", true);
         }
         
         else if(Input.GetKey("a") || Input.GetKey("left"))
         {
-            rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(-runSpeed * Time.deltaTime, rb2D.velocity.y);
             spriteRenderer.flipX = false;
             animator.SetBool("walk", true);
         }
@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         }
         if(Input.GetKey("space") && checkGround.isGrounded)
         {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed * Time.deltaTime);
         }
 
         if(checkGround.isGrounded==false)
