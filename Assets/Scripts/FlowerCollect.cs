@@ -10,6 +10,8 @@ public class FlowerCollect : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().enabled = false;
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            FindObjectOfType<Flowermanager>().AllFlowersCollected();
+            Debug.Log("Flor agarrada");
             Destroy(gameObject, 0.5f);
         }
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6468327907695653701}
   - component: {fileID: 1396818351336951635}
   - component: {fileID: 6471051543513418605}
+  - component: {fileID: 4716977754160076357}
   m_Layer: 0
   m_Name: eye
   m_TagString: Untagged
@@ -156,3 +157,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
+--- !u!114 &4716977754160076357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948273584664291903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c961579fec749641b3e2eca362e29df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

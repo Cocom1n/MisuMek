@@ -5,7 +5,7 @@ using UnityEngine;
 public class EyeMove : MonoBehaviour
 {
 
-    public float velocity = 50;
+    public float velocity = 150;
 
     // Start is called before the first frame update
     void Start()

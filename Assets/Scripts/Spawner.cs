@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject enemigos; //referencia al prefab del enemigo
 
-    public float intervalo = 0.5f; //intervalo de tiempo para spawnear cada enemigo
+    public float intervalo = 0.05f; //intervalo de tiempo para spawnear cada enemigo
 
     public float repeatSpawnRate = 3;
 
