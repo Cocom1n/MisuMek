@@ -9,7 +9,7 @@ public class DamageObject : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             Debug.Log("gato kill");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
