@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlowerCollect : MonoBehaviour
 {
      private float puntoFlor = 1;
+     
     [SerializeField] private Score score;
 
     private void OnTriggerEnter2D(Collider2D collision)

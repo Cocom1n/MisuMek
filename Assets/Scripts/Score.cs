@@ -5,7 +5,7 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    //En este script se toma el textMeshPro y contiene un metodo que actualiza el
+   //En este script se toma el textMeshPro y contiene un metodo que actualiza el
     //estado de las flores que recolecto el jugador y las actualiza dentro del
     //objeto de texto
     private float punto;
