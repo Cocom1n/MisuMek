@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class Enemycontroller : MonoBehaviour
 {
-    public Transform pointA; // El objeto Empty para el punto A
-    public Transform pointB; // El objeto Empty para el punto B
-    public float movementSpeed = 5f; // Velocidad de movimiento del enemigo
+    public Transform pointA; 
+    public Transform pointB; 
 
-    private bool movingToA = true; // Indica si el enemigo se está moviendo hacia A o B
+    public float speed = 5f; 
+
+    private bool movingToA = true; 
 
     void Start()
     {
-        StartCoroutine(MoveBetweenPoints());
+        StartCoroutine(patrullaje());
     }
 
-    IEnumerator MoveBetweenPoints()
+    IEnumerator patrullaje()
     {
-        while (true)
-        {
+        while (true) // mantiene la siguiente accion en un loop infinito
+
+        {   //pregunta si se esta moviendo hacia el punto A, si es verdadero se va a mover al punto A, si es falso se va a mover al punto B y lo asigna en targetPosition
             Vector3 targetPosition = movingToA ? pointA.position : pointB.position;
-            while (transform.position != targetPosition)
+            while (transform.position != targetPosition) //mientras que la poscicion actual sea distinta al target se va a mover hacia este para luego cambiar de direccion
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
                 yield return null;
             }
-            movingToA = !movingToA;
-            yield return new WaitForSeconds(1.0f); // Espera un segundo antes de cambiar de dirección
+            movingToA = !movingToA; //invierte la variable para cambiar el targetPosition
+            yield return new WaitForSeconds(1.0f);
         }
     }
 }

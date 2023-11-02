@@ -7,15 +7,15 @@ public class EyeMove : MonoBehaviour
 
     public float velocity = 150;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 10);
+        //destruye el objeto despues de 10 segundos
+        Destroy(gameObject, 10); 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //mueve el objeto en el eje Y hacia abajo
         transform.position += -transform.up * Time.deltaTime * velocity;
     }
 }

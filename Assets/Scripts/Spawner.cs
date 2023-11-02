@@ -5,11 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 
-    public GameObject enemigos; //referencia al prefab del enemigo
+    [SerializeField] private GameObject enemigos; //referencia al prefab del enemigo
 
-    public float intervalo = 0.05f; //intervalo de tiempo para spawnear cada enemigo
-
-    public float repeatSpawnRate = 3;
+    private float tiempoInicial = 0.05f; //tiempo de espera inicial para invocar al primer enemigo
+    private float intervalo = 3; //intervalo de tiempo para spawnear cada enemigo
 
     //variables que reprecentan el area de spawn para los enemigos
     public Transform minX;
@@ -20,14 +19,15 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnEnemigos", intervalo, repeatSpawnRate);
+        InvokeRepeating("SpawnEnemigos", tiempoInicial, intervalo); //Se encarga de invocar a los enemigos en un intervalo de tiempo despues del tiempo inicial
     }
 
     public void SpawnEnemigos()
     {
         Vector3 spawnpPos = new Vector3(0, 0, 0);
+        //determina un valor aleatorio entre los puntos establecidos para hacerlo el punto de spawn
         spawnpPos = new Vector3(Random.Range(minX.position.x,maxX.position.x), Random.Range(minY.position.y,maxY.position.y), 0);
-        GameObject enemigo = Instantiate (enemigos,spawnpPos,gameObject.transform.rotation);
+        GameObject enemigo = Instantiate (enemigos,spawnpPos,gameObject.transform.rotation); //instancia al enemigo en el pocicion dada anteriormente
     }
 
 }

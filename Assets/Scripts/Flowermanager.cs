@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Flowermanager : MonoBehaviour
 {
-    public string sigEscena;
+    [SerializeField] private string sigEscena;
+    
     //metodo que pregunta si todas las flores fueron recolectadas
     public void AllFlowersCollected()
     {
