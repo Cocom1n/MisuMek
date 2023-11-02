@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class DamageObject : MonoBehaviour
 {
-    
-    //[SerializeField] private VidasManager vidas;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //detecta la colicion de cualquier enemigo con el jugador
         if (collision.transform.CompareTag("Player"))
         {
-            //vidas.restarVida();
-            Debug.Log("gato kill");
-            //Destroy(gameObject);
+            //llama a al metodo dentro del script del jugador para restar vidas
+            collision.transform.GetComponent<VidasManager>().restarVida();
         }
     }
 }
