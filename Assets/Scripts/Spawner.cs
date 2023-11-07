@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject enemigos; //referencia al prefab del enemigo
 
     private float tiempoInicial = 0.05f; //tiempo de espera inicial para invocar al primer enemigo
-    private float intervalo = 3; //intervalo de tiempo para spawnear cada enemigo
+    [SerializeField] private float intervalo; //intervalo de tiempo para spawnear cada enemigo
 
     //variables que reprecentan el area de spawn para los enemigos
     public Transform minX;

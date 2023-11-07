@@ -1925,6 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigos: {fileID: 6047183024594934832, guid: 7cdc3fd39f10397439601ac2278006a1, type: 3}
+  intervalo: 2
   minX: {fileID: 13874833}
   maxX: {fileID: 1039893129}
   minY: {fileID: 148547176}

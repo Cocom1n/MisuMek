@@ -892,8 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigos: {fileID: 6047183024594934832, guid: 7cdc3fd39f10397439601ac2278006a1, type: 3}
-  intervalo: 1
-  repeatSpawnRate: 3
+  intervalo: 4
   minX: {fileID: 1667773207}
   maxX: {fileID: 605945790}
   minY: {fileID: 1220377191}
@@ -1726,7 +1725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b9caadac9c8444f9b39e1a3c6b631b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sigEscena: level2
+  sigEscena: win
 --- !u!4 &1484847835
 Transform:
   m_ObjectHideFlags: 0
