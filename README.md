@@ -1,10 +1,10 @@
-#Trabajo integrador 2D
+# Trabajo integrador 2D
 - **Alumno:** Carrasco Candela Elisa Rosa
 - **LU:** TUV000534
 - **Materia:** Programación de Videojuegos I
 - **Profesores:** Ariel Alejandro Vega, Samuel Bustamante
 
-#Juego: OliCat
+# Juego: OliCat
 - **Versión Unity:** 2022.3.7f1
 
 En este juego se deberá controlar a Oli, el personaje principal, y ayudarlo recolectar todas las flores que se encuentran en cada escenario, si lo logra restaurara la paz, pero si es derrotado por sus enemigos su mundo será destruido.
