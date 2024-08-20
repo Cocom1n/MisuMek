@@ -1297,8 +1297,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000031872, y: 169}
-  m_SizeDelta: {x: 410.2488, y: 102.5622}
+  m_AnchoredPosition: {x: 0.00082397, y: 161}
+  m_SizeDelta: {x: 534.2117, y: 144.5143}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &554485445
 MonoBehaviour:
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: oLI Cat
+  m_text: MisuMek
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c490145feb1594147b21427507187b15, type: 2}
   m_sharedMaterial: {fileID: 1139650399647647989, guid: c490145feb1594147b21427507187b15, type: 2}
@@ -1347,13 +1347,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 117.33
+  m_fontSizeBase: 117.33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 34
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1777,7 +1777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -16}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &847001462
