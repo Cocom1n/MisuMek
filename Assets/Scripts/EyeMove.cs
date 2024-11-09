@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class EyeMove : MonoBehaviour
 {
-
     public float velocity = 150;
+    private EnemyPool enemyPool; // Referencia al Enemy Pool
 
     void Start()
     {
-        //destruye el objeto despues de 10 segundos
-        Destroy(gameObject, 10); 
+        enemyPool = FindObjectOfType<EnemyPool>();
+
+        if (enemyPool == null)
+        {
+            Debug.LogError("No se encontró el Enemy Pool en la escena.");
+        }
     }
 
     void Update()
     {
-        //mueve el objeto en el eje Y hacia abajo
+        // Mueve el objeto en el eje Y hacia abajo
         transform.position += -transform.up * Time.deltaTime * velocity;
+        if (transform.position.y < -21)
+        {
+            enemyPool.ReturnEnemy(gameObject);
+        }
     }
 }
+
