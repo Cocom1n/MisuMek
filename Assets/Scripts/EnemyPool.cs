@@ -12,11 +12,11 @@ public class EnemyPool : MonoBehaviour
     {
         pool = new Queue<GameObject>();
 
-        // Inicializamos el pool creando objetos enemigos
+        //Crea a todos los enemigos
         for (int i = 0; i < poolSize; i++)
         {
             GameObject enemigo = Instantiate(enemigoPrefab);
-            enemigo.SetActive(false); // Los enemigos no están activos al inicio
+            enemigo.SetActive(false);
             pool.Enqueue(enemigo);
         }
     }

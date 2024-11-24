@@ -14,7 +14,7 @@ public class Flowermanager : MonoBehaviour
         {
             Debug.Log("Todas las flores fueron recollectadas");
             //en caso de que ya no queden flores pasa a la siguiente escena
-            SceneManager.LoadScene(sigEscena);
+            //SceneManager.LoadScene(sigEscena);
         }
     }
 }
