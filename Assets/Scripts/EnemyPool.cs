@@ -6,20 +6,44 @@ public class EnemyPool : MonoBehaviour
 {
     [SerializeField] private GameObject enemigoPrefab;
     [SerializeField] private int poolSize = 10;
-    private Queue<GameObject> pool;
+    private Queue<GameObject> pool = new Queue<GameObject>();
+    public static EnemyPool Instance { get; private set; }
 
-    void Start()
+    //void Start()
+    //{
+
+    //    //Crea a todos los enemigos
+    //    for (int i = 0; i < poolSize; i++)
+    //    {
+    //        GameObject enemigo = Instantiate(enemigoPrefab);
+    //        enemigo.SetActive(false);
+    //        pool.Enqueue(enemigo);
+    //    }
+    //}
+    private void Awake()
     {
-        pool = new Queue<GameObject>();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        //Crea a todos los enemigos
+        InitializePool();
+    }
+
+    private void InitializePool()
+    {
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject enemigo = Instantiate(enemigoPrefab);
-            enemigo.SetActive(false);
-            pool.Enqueue(enemigo);
+            GameObject enemy = Instantiate(enemigoPrefab);
+            enemy.SetActive(false);
+            pool.Enqueue(enemy);
         }
     }
+
 
     public GameObject GetEnemy()
     {
@@ -32,8 +56,9 @@ public class EnemyPool : MonoBehaviour
         else
         {
             // Si el pool está vacío, podemos crear un nuevo enemigo si es necesario
-            GameObject enemigo = Instantiate(enemigoPrefab);
-            return enemigo;
+            //GameObject enemigo = Instantiate(enemigoPrefab);
+            //return enemigo;
+            return null;
         }
     }
 

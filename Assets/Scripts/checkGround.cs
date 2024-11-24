@@ -7,7 +7,7 @@ public class checkGround : MonoBehaviour
 {
     //Script que se encarga de verificar si el jugador esta colicionando con las plataformas
     
-    public bool isGrounded; //Static significa que la variable puede ser usada en otros scripts
+    public bool isGrounded;
     private PhotonView photonView;
     
     void Start()
@@ -19,7 +19,10 @@ public class checkGround : MonoBehaviour
     {
         if (photonView != null && photonView.IsMine) // Solo el jugador local actualiza su estado.
         {
-            isGrounded = true;
+            if (collision.CompareTag("Piso") || collision.CompareTag("Enemigo"))
+            {
+                isGrounded = true;
+            }
         }
     }
 

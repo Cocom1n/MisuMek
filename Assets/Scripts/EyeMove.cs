@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EyeMove : MonoBehaviour
 {
-    public float velocity = 150;
+    private float velocity = 5;
     private EnemyPool enemyPool; // Referencia al Enemy Pool
 
     void Start()
