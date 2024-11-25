@@ -21,10 +21,10 @@ public class EyeMove : MonoBehaviour
     {
         // Mueve el objeto en el eje Y hacia abajo
         transform.position += -transform.up * Time.deltaTime * velocity;
-        if (transform.position.y < -10)
-        {
-            enemyPool.ReturnEnemy(gameObject);
-        }
+        //if (transform.position.y < -10)
+        //{
+        //    enemyPool.ReturnEnemy(gameObject);
+        //}
     }
 }
 

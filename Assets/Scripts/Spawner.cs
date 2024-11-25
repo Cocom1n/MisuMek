@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour, ISwitcheable
 {
-    //[SerializeField] private EnemyPool enemyPool; 
     private float tiempoInicial = 0.05f;
     [SerializeField] private float intervalo;
 
@@ -19,10 +18,11 @@ public class Spawner : MonoBehaviour, ISwitcheable
 
     private BoxCollider2D ZonaSpawn;
 
+    private List<GameObject> enemigosActivos = new List<GameObject>();
+
     void Start()
     {
         ZonaSpawn = GetComponent<BoxCollider2D>();
-        //InvokeRepeating("SpawnEnemigos", tiempoInicial, intervalo);
     }
 
     void Update()
@@ -40,6 +40,17 @@ public class Spawner : MonoBehaviour, ISwitcheable
                 CancelInvoke("SpawnEnemigos");
             }
             isDirty = false;
+        }
+
+        for (int i = enemigosActivos.Count - 1; i >= 0; i--)
+        {
+            GameObject enemigo = enemigosActivos[i];
+            if (enemigo.transform.position.y < maxY.position.y-30 )
+            {
+                // Devuelve el enemigo al pool y lo elimina de la lista
+                EnemyPool.Instance.ReturnEnemy(enemigo);
+                enemigosActivos.RemoveAt(i);
+            }
         }
     }
 
@@ -65,8 +76,8 @@ public class Spawner : MonoBehaviour, ISwitcheable
         {
             enemigo.transform.position = spawnPos;
             enemigo.SetActive(true); // Activa el enemigo del pool
+            enemigosActivos.Add(enemigo);
         }
-        //enemigo.transform.position = spawnPos;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

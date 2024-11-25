@@ -9,17 +9,6 @@ public class EnemyPool : MonoBehaviour
     private Queue<GameObject> pool = new Queue<GameObject>();
     public static EnemyPool Instance { get; private set; }
 
-    //void Start()
-    //{
-
-    //    //Crea a todos los enemigos
-    //    for (int i = 0; i < poolSize; i++)
-    //    {
-    //        GameObject enemigo = Instantiate(enemigoPrefab);
-    //        enemigo.SetActive(false);
-    //        pool.Enqueue(enemigo);
-    //    }
-    //}
     private void Awake()
     {
         if (Instance == null)
@@ -50,14 +39,11 @@ public class EnemyPool : MonoBehaviour
         if (pool.Count > 0)
         {
             GameObject enemigo = pool.Dequeue();
-            enemigo.SetActive(true); // Activamos el enemigo
+            enemigo.SetActive(true);
             return enemigo;
         }
         else
         {
-            // Si el pool está vacío, podemos crear un nuevo enemigo si es necesario
-            //GameObject enemigo = Instantiate(enemigoPrefab);
-            //return enemigo;
             return null;
         }
     }
@@ -65,7 +51,7 @@ public class EnemyPool : MonoBehaviour
     // Devolver un enemigo al pool
     public void ReturnEnemy(GameObject enemigo)
     {
-        enemigo.SetActive(false); // Desactivamos el enemigo antes de devolverlo
+        enemigo.SetActive(false);
         pool.Enqueue(enemigo);
     }
 }
