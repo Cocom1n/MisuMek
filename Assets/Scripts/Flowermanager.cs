@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System;
 
 public class Flowermanager : MonoBehaviour
 {
     private bool tieneTodasLasFlores = false;
-    
+    public static event Action HabilitadoParaGanar;
+
     //metodo que pregunta si todas las flores fueron recolectadas
     public void AllFlowersCollected()
     {
@@ -21,7 +22,8 @@ public class Flowermanager : MonoBehaviour
     {
         if(tieneTodasLasFlores)
         {
-            SceneManager.LoadScene("win");
+            HabilitadoParaGanar?.Invoke();
+            Debug.Log("Habilitado para ganar");
         }
         else
         {

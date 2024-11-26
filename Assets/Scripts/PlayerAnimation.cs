@@ -1,12 +1,9 @@
 using UnityEngine;
-using Photon.Pun;
 
 public class PlayerAnimation : MonoBehaviour, IPlayerObserver
 {
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rb2D;
-    private PhotonView photonView;
     private PlayerMove playerMove;
     private checkGround checkGroundd;
 
@@ -16,8 +13,6 @@ public class PlayerAnimation : MonoBehaviour, IPlayerObserver
         playerMove.AddObserver(this);
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb2D = GetComponent<Rigidbody2D>();
-        photonView = GetComponent<PhotonView>();
         checkGroundd = GetComponentInChildren<checkGround>();
     }
 

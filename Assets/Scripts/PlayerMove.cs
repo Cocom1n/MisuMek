@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     private float runSpeed=200;
     private float jumpSpeed=350;
-    Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
     private checkGround check;
     private List<IPlayerObserver> observers = new List<IPlayerObserver>();
     private PhotonView photonView;
