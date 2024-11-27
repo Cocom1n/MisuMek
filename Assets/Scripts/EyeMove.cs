@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class EyeMove : MonoBehaviour
 {
-
-    public float velocity = 150;
-
-    void Start()
-    {
-        //destruye el objeto despues de 10 segundos
-        Destroy(gameObject, 10); 
-    }
+    private float velocity = 5;// Referencia al Enemy Pool
 
     void Update()
     {
-        //mueve el objeto en el eje Y hacia abajo
+        // Mueve el objeto en el eje Y hacia abajo
         transform.position += -transform.up * Time.deltaTime * velocity;
+
     }
 }
+
